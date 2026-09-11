@@ -1,164 +1,93 @@
 import React, { useState } from "react";
-
 import logoImg from "../assets/logo-text.png";
-import hamburgerIcon from "../assets/hamburger.png";
+import hamburgerImg from "../assets/hamburger.png";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Technologies", href: "#technologies" },
+    { name: "Projects", href: "#projects" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
         
-        <div className="hidden md:flex h-16 items-center justify-between">
-      
+        {/* Mobile Hamburger Button */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-1 focus:outline-none"
+          >
+            <img
+              src={hamburgerImg}
+              alt="Menu"
+              className="h-6 w-6 object-contain"
+            />
+          </button>
+        </div>
+
+        {/* Brand Logo */}
+        <div className="flex items-center">
           <a href="#home" className="flex items-center">
             <img
               src={logoImg}
               alt="Dev Stack Logo"
-              className="h-8 sm:h-9 w-auto object-contain"
+              className="h-7 w-auto object-contain"
             />
           </a>
-
-     
-          <div className="flex items-center gap-6 text-sm font-medium text-gray-600">
-            <a
-              href="#home"
-              className="hover:text-pink-600 transition-colors"
-            >
-              Home
-            </a>
-
-            <a
-              href="#technologies"
-              className="hover:text-pink-600 transition-colors"
-            >
-              Technologies
-            </a>
-
-            <a
-              href="#projects"
-              className="hover:text-pink-600 transition-colors"
-            >
-              Projects
-            </a>
-
-            <a
-              href="#about"
-              className="hover:text-pink-600 transition-colors"
-            >
-              About
-            </a>
-
-            <a
-              href="#contact"
-              className="hover:text-pink-600 transition-colors"
-            >
-              Contact
-            </a>
-          </div>
-
-         
-          <div className="flex items-center gap-4">
-            <button className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">
-              Sign In
-            </button>
-
-            <button className="bg-(--brand-gradient) hover:opacity-90 text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-sm">
-              Sign Up
-            </button>
-          </div>
         </div>
 
-       
-        <div className="md:hidden h-16 grid grid-cols-3 items-center">
-          <div className="flex justify-start">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-              className="p-1 focus:outline-none"
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center space-x-8 text-xs font-medium text-gray-600">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="hover:text-pink-500 transition-colors duration-200"
             >
-              <img
-                src={hamburgerIcon}
-                alt="Menu"
-                className="h-6 w-6 object-contain"
-              />
-            </button>
-          </div>
-
-          <div className="flex justify-center">
-            <a href="#home" onClick={closeMenu}>
-              <img
-                src={logoImg}
-                alt="Dev Stack Logo"
-                className="h-8 w-auto object-contain"
-              />
+              {link.name}
             </a>
-          </div>
-
-          <div className="flex justify-end items-center gap-2">
-            <button className="text-gray-600 hover:text-gray-900 text-[11px] font-medium">
-              Sign In
-            </button>
-
-         
-            <button className="bg-(--brand-gradient) hover:opacity-90 text-white px-3 py-1.5 rounded-full text-[11px] font-medium transition-all duration-300">
-              Sign Up
-            </button>
-          </div>
+          ))}
         </div>
 
-       
-        {isOpen && (
-          <div className="md:hidden border-t border-gray-100 py-4">
-            <div className="flex flex-col gap-3 text-sm font-medium text-gray-600">
-              <a
-                href="#home"
-                onClick={closeMenu}
-                className="hover:text-pink-600 transition-colors"
-              >
-                Home
-              </a>
+        {/* Auth Buttons */}
+        <div className="flex items-center space-x-3 sm:space-x-4">
+          <a
+            href="#signin"
+            className="text-xs font-medium text-gray-700 hover:text-pink-500 px-2 sm:px-3 py-2 transition-colors duration-200"
+          >
+            Sign In
+          </a>
 
-              <a
-                href="#technologies"
-                onClick={closeMenu}
-                className="hover:text-pink-600 transition-colors"
-              >
-                Technologies
-              </a>
-
-              <a
-                href="#projects"
-                onClick={closeMenu}
-                className="hover:text-pink-600 transition-colors"
-              >
-                Projects
-              </a>
-
-              <a
-                href="#about"
-                onClick={closeMenu}
-                className="hover:text-pink-600 transition-colors"
-              >
-                About
-              </a>
-
-              <a
-                href="#contact"
-                onClick={closeMenu}
-                className="hover:text-pink-600 transition-colors"
-              >
-                Contact
-              </a>
-            </div>
-          </div>
-        )}
+          <a
+            href="#signup"
+            className="gradient-btn text-white px-4 sm:px-5 py-2 rounded-xl text-xs font-semibold hover:opacity-90 transition-all duration-200 shadow-sm"
+          >
+            Sign Up
+          </a>
+        </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-4 space-y-3">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="block text-xs font-medium text-gray-600 hover:text-pink-500 py-1 transition-colors duration-200"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };
