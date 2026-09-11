@@ -8,7 +8,6 @@ import StackSidebar from "./components/StackSidebar";
 
 import { Technology } from "./types";
 
-
 import bannerImg from "./assets/banner-stack.png";
 import logoImg from "./assets/logo-text.png";
 
@@ -18,7 +17,6 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
 
-  
   useEffect(() => {
     const loadTechnologies = async () => {
       try {
@@ -43,7 +41,6 @@ const App: React.FC = () => {
 
     loadTechnologies();
   }, []);
-
 
   const handleAddToStack = (tech: Technology) => {
     const isExist = myStack.some((item) => item.id === tech.id);
@@ -75,7 +72,6 @@ const App: React.FC = () => {
     });
   };
 
-
   const handleRemoveFromStack = (id: string) => {
     const itemToRemove = myStack.find((item) => item.id === id);
 
@@ -95,7 +91,6 @@ const App: React.FC = () => {
       });
     }
   };
-
 
   const handleRemoveAll = () => {
     if (myStack.length === 0) {
@@ -117,27 +112,21 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
-    
       <ToastContainer />
 
-  
       <Navbar />
 
-    
       <section
         id="home"
         className="max-w-7xl mx-auto px-4 sm:px-8 pt-8 sm:pt-12 pb-12 sm:pb-16 grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12"
       >
-     
         <div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
             Build Your Ideal
             <br />
             <span className="bg-(--brand-gradient) bg-clip-text text-transparent">
               Development Stack
-              </span>
-
-
+            </span>
           </h1>
 
           <p className="text-gray-500 text-sm sm:text-base max-w-xl leading-relaxed mb-6 sm:mb-8">
@@ -145,11 +134,11 @@ const App: React.FC = () => {
             Compare technologies and build a stack that fits your next project.
           </p>
 
-     
           <div className="flex flex-wrap gap-3 sm:gap-4">
+            {/* Error Fixed Here: Added space between bg-(--brand-gradient) and hover:opacity-90 */}
             <a
               href="#technologies"
-              className="bg-(--brand-gradient)hover:opacity-90 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all duration-300"
+              className="bg-(--brand-gradient) hover:opacity-90 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all duration-300"
             >
               Explore Technologies
             </a>
@@ -163,7 +152,6 @@ const App: React.FC = () => {
           </div>
         </div>
 
-   
         <div className="flex justify-center">
           <img
             src={bannerImg}
@@ -173,19 +161,16 @@ const App: React.FC = () => {
         </div>
       </section>
 
-  
       <section
         id="technologies"
         className="max-w-7xl mx-auto px-4 sm:px-8 pb-24"
       >
-     
         <div className="mb-8">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
             Explore the{" "}
             <span className="bg-(--brand-gradient) bg-clip-text text-transparent">
-                Development Stack
-                </span>
-                
+              Development Stack
+            </span>
           </h2>
 
           <p className="text-xs sm:text-sm text-gray-400 mt-1">
@@ -194,11 +179,8 @@ const App: React.FC = () => {
           </p>
         </div>
 
-       
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-     
           <div className="lg:col-span-3">
-        
             {loading && (
               <div className="flex flex-col items-center justify-center py-16">
                 <div className="w-10 h-10 border-4 border-gray-200 border-t-pink-500 rounded-full animate-spin mb-4"></div>
@@ -215,7 +197,6 @@ const App: React.FC = () => {
               </div>
             )}
 
-          
             {!loading && !error && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {techs.map((item) => {
@@ -235,7 +216,6 @@ const App: React.FC = () => {
               </div>
             )}
 
-        
             {!loading && !error && techs.length === 0 && (
               <div className="flex items-center justify-center py-16">
                 <p className="text-sm text-gray-500">
@@ -245,7 +225,6 @@ const App: React.FC = () => {
             )}
           </div>
 
-         
           <div className="lg:col-span-1">
             <StackSidebar
               myStack={myStack}
@@ -256,15 +235,12 @@ const App: React.FC = () => {
         </div>
       </section>
 
-     
       <footer
         id="contact"
         className="bg-white border-t border-gray-100 pt-12 px-4 sm:px-8"
       >
         <div className="max-w-7xl mx-auto">
-        
           <div className="flex flex-col md:flex-row justify-between items-start gap-10 pb-10">
-       
             <div>
               <div className="flex items-center mb-3">
                 <img
@@ -309,9 +285,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-          
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 sm:gap-16">
-             
               <div>
                 <h4 className="font-bold text-gray-900 mb-3 uppercase tracking-wider text-[10px]">
                   Product
@@ -347,7 +321,6 @@ const App: React.FC = () => {
                 </ul>
               </div>
 
-             
               <div id="about">
                 <h4 className="font-bold text-gray-900 mb-3 uppercase tracking-wider text-[10px]">
                   Company
@@ -383,7 +356,6 @@ const App: React.FC = () => {
                 </ul>
               </div>
 
-          
               <div>
                 <h4 className="font-bold text-gray-900 mb-3 uppercase tracking-wider text-[10px]">
                   Legal
@@ -412,7 +384,6 @@ const App: React.FC = () => {
             </div>
           </div>
 
-         
           <div className="border-t border-gray-100 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
             <p>
               © {new Date().getFullYear()} Dev Stack. All rights reserved.
