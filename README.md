@@ -61,8 +61,11 @@ When the stack is empty, it shows the empty message. Otherwise, it shows the sel
 A parent sends data to a child using props.
 
 For example:
+<TechCard 
+item={item} 
+onAdd={handleAddToStack} 
+/>
 
-<TechCard item={item} onAdd={handleAddToStack} />
 
 Here, item and onAdd are passed from the parent to the child.
 
