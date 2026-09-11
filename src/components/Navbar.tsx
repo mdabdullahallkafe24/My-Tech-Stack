@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-       
+        {/* Desktop Navbar */}
         <div className="hidden md:flex h-16 items-center justify-between">
           {/* Brand */}
           <a href="#home" className="flex items-center">
@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
             />
           </a>
 
-         
+          {/* Links */}
           <div className="flex items-center gap-6 text-sm font-medium text-gray-600">
             <a
               href="#home"
@@ -62,21 +62,20 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-          
+          {/* Buttons */}
           <div className="flex items-center gap-4">
             <button className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">
               Sign In
             </button>
 
-            <button className="bg-[var(--brand-gradient)] hover:opacity-90 text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-sm">
+            <button className="bg-(--brand-gradient) hover:opacity-90 text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-sm">
               Sign Up
             </button>
           </div>
         </div>
 
-   
+        {/* Mobile Navbar Header */}
         <div className="md:hidden h-16 grid grid-cols-3 items-center">
-       
           <div className="flex justify-start">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -91,7 +90,6 @@ const Navbar: React.FC = () => {
             </button>
           </div>
 
-         
           <div className="flex justify-center">
             <a href="#home" onClick={closeMenu}>
               <img
@@ -102,19 +100,19 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-        
           <div className="flex justify-end items-center gap-2">
             <button className="text-gray-600 hover:text-gray-900 text-[11px] font-medium">
               Sign In
             </button>
 
-            <button className="bg-[var(--brand-gradient)] hover:opacity-90 text-white px-3 py-1.5 rounded-full text-[11px] font-medium transition-all duration-300">
+            {/* Error fixed here (removed "...") */}
+            <button className="bg-(--brand-gradient) hover:opacity-90 text-white px-3 py-1.5 rounded-full text-[11px] font-medium transition-all duration-300">
               Sign Up
             </button>
           </div>
         </div>
 
-       
+        {/* Mobile Dropdown Menu */}
         {isOpen && (
           <div className="md:hidden border-t border-gray-100 py-4">
             <div className="flex flex-col gap-3 text-sm font-medium text-gray-600">

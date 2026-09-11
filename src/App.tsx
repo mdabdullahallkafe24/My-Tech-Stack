@@ -133,9 +133,11 @@ const App: React.FC = () => {
           <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
             Build Your Ideal
             <br />
-            <span className="bg-[var(--brand-gradient)] bg-clip-text text-transparent">
+            <span className="bg-(--brand-gradient) bg-clip-text text-transparent">
               Development Stack
-            </span>
+              </span>
+
+
           </h1>
 
           <p className="text-gray-500 text-sm sm:text-base max-w-xl leading-relaxed mb-6 sm:mb-8">
@@ -147,7 +149,7 @@ const App: React.FC = () => {
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <a
               href="#technologies"
-              className="bg-[var(--brand-gradient)] hover:opacity-90 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all duration-300"
+              className="bg-(--brand-gradient)hover:opacity-90 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all duration-300"
             >
               Explore Technologies
             </a>
@@ -180,9 +182,10 @@ const App: React.FC = () => {
         <div className="mb-8">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
             Explore the{" "}
-            <span className="bg-[var(--brand-gradient)] bg-clip-text text-transparent">
-              Technologies
-            </span>
+            <span className="bg-(--brand-gradient) bg-clip-text text-transparent">
+                Development Stack
+                </span>
+                
           </h2>
 
           <p className="text-xs sm:text-sm text-gray-400 mt-1">
