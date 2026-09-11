@@ -1,11 +1,8 @@
 
-DevStack - Interactive Tech Stack Builder
-
+# DevStack - Interactive Tech Stack Builder
 A simple web app for developers to explore technologies, compare options, and build their ideal stack.
 
-
-Tech Stack
-
+## Tech Stack
 - React.js
 - TypeScript
 - Vite
@@ -13,48 +10,60 @@ Tech Stack
 - React-Toastify
 - JSON Data
 
-
-Key Features
-
-1. Tech Selection: Pick and remove tools across different categories to form your stack.
-2. Instant Alerts: Get toast notifications when items are added, removed, or duplicated.
-3. Mobile Ready: Responsive design featuring a custom mobile drawer navigation.
-
-
-React Q&A
-
+    React Q&A: 
+    
 1. What is JSX, and why is it used in React?
-JSX is a syntax extension that lets us write HTML-like markup inside JavaScript. It makes writing and understanding React UI components much easier than using raw JS functions.
+
+JSX is a syntax that lets us write HTML-like code inside JavaScript or TypeScript. It makes React components easier to write and understand.
 
 
 2. What is the difference between props and state?
-Props: Read-only data passed from a parent component to a child. The child cannot change props.
-State: Internal data managed inside a component. When state changes, React re-renders the component to reflect updates.
+
+Props are data passed from a parent component to a child component. They are read-only.
+
+State is data managed inside a component. When state changes, React updates the UI.
 
 
 3. What does the useState hook do, and where did you use it in this project?
-useState creates a reactive state variable to hold dynamic values. 
-- Used in App.tsx to store tech data, selected stack items, loading state, and error handling.
-- Used in Navbar.tsx to toggle the mobile menu (isOpen).
+
+The useState hook is used to create and manage state in a React component.
+
+I used it in App.tsx to manage technology data, selected stack items, loading, and error states. I also used it in Navbar.tsx to control the mobile menu.
 
 
 4. What does the useEffect hook do, and why did you need it to load the JSON data?
-useEffect handles side effects like fetching data or DOM manipulation. Fetching local JSON data is an asynchronous task, so useEffect runs once when the component mounts to load technologies.json.
+
+The useEffect hook is used to perform side effects in a React component.
+
+I used it in App.tsx to fetch the technologies.json file when the component loads.
 
 
 5. Why does every item in a .map() list need a unique key prop?
-The key prop helps React identify which items changed, were added, or removed. It optimizes performance by updating only specific elements instead of re-rendering the whole list.
+
+A unique key helps React identify each item in a list. It helps React understand which item has changed, been added, or removed.
 
 
 6. What is conditional rendering? Show one place you used it.
-Conditional rendering means showing UI elements based on specific conditions or state.
 
-Example in StackSidebar.tsx:
-myStack.length === 0 ? <p>No items added yet.</p> : myStack.map((tech) => ...)
+Conditional rendering means showing different UI based on a condition.
 
-Shows an empty state message when the stack is empty, otherwise renders the list.
+I used it in StackSidebar.tsx:
+
+myStack.length === 0
+  ? <p>No items added yet.</p>
+  : myStack.map((tech) => ...)
+
+When the stack is empty, it shows the empty message. Otherwise, it shows the selected technologies.
 
 
-7. How do you pass data from parent to child, and child back to parent?
-Parent to Child: Data is passed down directly using Props (example: <TechCard item={item} />).
-Child to Parent: The parent passes a callback function via props, which the child calls to send data back (example: passing handleAddToStack as onAdd prop to <TechCard />).
+7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+A parent sends data to a child using props.
+
+For example:
+
+<TechCard item={item} onAdd={handleAddToStack} />
+
+Here, item and onAdd are passed from the parent to the child.
+
+The child can call the onAdd function to send information back to the parent when the user clicks the Add to Stack button.

@@ -21,7 +21,7 @@ const TechCard: React.FC<TechCardProps> = ({
       }`}
     >
       <div>
-        {/* Icon & Badge */}
+       
         <div className="flex justify-between items-start mb-4">
           <div className="w-10 h-10 flex items-center justify-center">
             {item.icon ? (
@@ -42,19 +42,19 @@ const TechCard: React.FC<TechCardProps> = ({
           )}
         </div>
 
-        {/* Technology Name */}
+    
         <h3 className="font-bold text-gray-900 text-base mb-1">
           {item.name}
         </h3>
 
-        {/* Description */}
+      
         <p className="text-gray-500 text-xs leading-relaxed mb-6 line-clamp-3">
           {item.description}
         </p>
       </div>
 
       <div>
-        {/* Category, Difficulty & Rating */}
+      
         <div className="flex items-center justify-between text-[10px] text-gray-400 mb-4 pt-2 border-t border-gray-50">
           <div className="flex flex-wrap gap-2">
             <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
@@ -71,7 +71,7 @@ const TechCard: React.FC<TechCardProps> = ({
           </span>
         </div>
 
-        {/* Add to Stack Button */}
+     
         <button
           onClick={() => onAdd(item)}
           disabled={isAdded}
