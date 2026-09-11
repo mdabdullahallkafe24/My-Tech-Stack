@@ -9,13 +9,16 @@ interface FilterBarProps {
 }
 
 const FilterBar: React.FC<FilterBarProps> = ({
+
   searchQuery,
   setSearchQuery,
   selectedCategory,
   setSelectedCategory,
   categories,
 }) => {
+
   return (
+
     <div className="flex flex-col sm:flex-row gap-4 mb-6 items-center justify-between bg-slate-800/50 p-4 rounded-xl border border-slate-700/60">
      
       <input
@@ -27,8 +30,8 @@ const FilterBar: React.FC<FilterBarProps> = ({
       />
 
     
-      <div className="flex flex-wrap gap-2 w-full sm:w-auto">
-        {categories.map((cat) => (
+          <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+           {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
@@ -36,6 +39,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
               selectedCategory === cat
                 ? "bg-indigo-600 text-white font-medium shadow"
                 : "bg-slate-700/60 text-slate-300 hover:bg-slate-700"
+                
             }`}
           >
             {cat}
