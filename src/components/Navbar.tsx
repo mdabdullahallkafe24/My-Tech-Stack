@@ -15,13 +15,14 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
         
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger */}
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-1 focus:outline-none"
+            aria-label="Toggle navigation menu"
           >
             <img
               src={hamburgerImg}
@@ -32,7 +33,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Brand Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
           <a href="#home" className="flex items-center">
             <img
               src={logoImg}
@@ -42,7 +43,7 @@ const Navbar: React.FC = () => {
           </a>
         </div>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8 text-xs font-medium text-gray-600">
           {navLinks.map((link) => (
             <a
@@ -55,7 +56,7 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Auth Buttons */}
+        {/* Sign In / Sign Up */}
         <div className="flex items-center space-x-3 sm:space-x-4">
           <a
             href="#signin"
@@ -73,7 +74,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-4 space-y-3">
           {navLinks.map((link) => (
