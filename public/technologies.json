@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "name": "React",
+    "category": "Frontend",
+    "description": "A JavaScript library for building user interfaces.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "rating": 4.8,
+    "level": "Advanced",
+    "badge": "Popular"
+  },
+  {
+    "id": "2",
+    "name": "Node.js",
+    "category": "Backend",
+    "description": "JavaScript runtime built on Chrome's V8 JavaScript engine.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "rating": 4.6,
+    "level": "Intermediate",
+    "badge": "Popular"
+  },
+  {
+    "id": "3",
+    "name": "MongoDB",
+    "category": "Database",
+    "description": "A document-based NoSQL database for modern applications.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "rating": 4.5,
+    "level": "Intermediate",
+    "badge": "Trending"
+  },
+  {
+    "id": "4",
+    "name": "Tailwind CSS",
+    "category": "Styling",
+    "description": "A utility-first CSS framework for rapidly building modern interfaces.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "badge": "Popular"
+  },
+  {
+    "id": "5",
+    "name": "Express.js",
+    "category": "Backend",
+    "description": "A fast and minimalist web framework for Node.js.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    "rating": 4.4,
+    "level": "Intermediate",
+    "badge": "Popular"
+  },
+  {
+    "id": "6",
+    "name": "TypeScript",
+    "category": "Language",
+    "description": "A strongly typed programming language that builds on JavaScript.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    "rating": 4.7,
+    "level": "Advanced",
+    "badge": "Trending"
+  },
+  {
+    "id": "7",
+    "name": "JavaScript",
+    "category": "Language",
+    "description": "A programming language widely used for interactive web applications.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "rating": 4.8,
+    "level": "Advanced",
+    "badge": "Popular"
+  },
+  {
+    "id": "8",
+    "name": "Next.js",
+    "category": "Frontend",
+    "description": "A React framework for building fast and scalable web applications.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    "rating": 4.7,
+    "level": "Advanced",
+    "badge": "Trending"
+  },
+  {
+    "id": "9",
+    "name": "PostgreSQL",
+    "category": "Database",
+    "description": "An open-source relational database system for modern applications.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    "rating": 4.6,
+    "level": "Intermediate",
+    "badge": "Popular"
+  },
+  {
+    "id": "10",
+    "name": "Git",
+    "category": "Tools",
+    "description": "A distributed version control system for tracking code changes.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "rating": 4.8,
+    "level": "Intermediate",
+    "badge": "Essential"
+  },
+  {
+    "id": "11",
+    "name": "Docker",
+    "category": "DevOps",
+    "description": "A platform for building, running, and managing applications in containers.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "rating": 4.5,
+    "level": "Intermediate",
+    "badge": "Trending"
+  },
+  {
+    "id": "12",
+    "name": "Firebase",
+    "category": "Backend",
+    "description": "A Google platform providing backend services for web and mobile applications.",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    "rating": 4.4,
+    "level": "Intermediate",
+    "badge": "Popular"
+  }
+]
